@@ -400,9 +400,9 @@
   border-radius: var(--radius-2xl);
   box-shadow: var(--shadow-2xl);
   border: 1px solid var(--gray-200);
-  padding: var(--space-12);
+  padding: var(--space-10);
   width: 100%;
-  max-width: 480px;
+  max-width: 450px;
   position: relative;
 }
 

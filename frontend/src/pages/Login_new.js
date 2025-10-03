@@ -115,13 +115,6 @@ const Login = () => {
                     <p>Track weather patterns and historical data</p>
                   </div>
                 </div>
-                <div className="highlight-item">
-                  <span className="highlight-icon">⚡</span>
-                  <div className="highlight-text">
-                    <h3>Real-Time Alerts</h3>
-                    <p>Instant notifications for severe weather conditions</p>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -209,18 +202,7 @@ const Login = () => {
                 </button>
 
                 <div className="divider">
-                  <span className="divider-text">or continue with</span>
-                </div>
-
-                <div className="social-login">
-                  <button type="button" className="social-button google">
-                    <span className="social-icon">🔵</span>
-                    <span>Google</span>
-                  </button>
-                  <button type="button" className="social-button github">
-                    <span className="social-icon">⚫</span>
-                    <span>GitHub</span>
-                  </button>
+                  
                 </div>
 
                 <div className="form-footer">
