@@ -37,11 +37,16 @@ The application addresses the critical need for accurate, event-specific weather
 
 | Login Page | Register Page |
 | :---: | :---: |
-| ![Login Page](https://via.placeholder.com/400x300.png?text=Login+Page) | ![Register Page](https://via.placeholder.com/400x300.png?text=Register+Page) |
+| ![Login Page](https://github.com/user-attachments/assets/6e0dc9fa-9869-40c0-b0f1-2b8938a330bd) | ![Register Page](https://github.com/user-attachments/assets/1d0176c8-f05b-4328-88bc-e7367b102681) |
 
 | Dashboard | Location Management |
 | :---: | :---: |
-| ![Dashboard](https://via.placeholder.com/400x300.png?text=Dashboard) | ![Location Management](https://via.placeholder.com/400x300.png?text=Location+Management) |
+| ![Dashboard](https://github.com/user-attachments/assets/f0c42556-0ecd-46da-90bc-760846e200a7) | ![Location Management](https://github.com/user-attachments/assets/689dce75-c8a5-4a1b-be4f-6e55f05e3b9e) |
+
+| Home 1 | Home 2 |
+| :---: | :---: |
+| ![Home1](https://github.com/user-attachments/assets/b0b5aaac-1d5f-4cc3-9eb7-0258f7b51507) | ![Home2](https://github.com/user-attachments/assets/9a411075-acb3-42e6-a174-20961043afed) |
+
 
 
 ## ✨ Features
