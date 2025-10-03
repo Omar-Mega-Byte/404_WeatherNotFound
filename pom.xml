@@ -146,6 +146,30 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <profiles>
+  <profile>
+    <id>production</id>
+    <properties>
+      <skipTests>true</skipTests>
+    </properties>
+    <!-- Optional: exclude devtools in production build -->
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+        <scope>runtime</scope>
+        <optional>true</optional>
+        <exclusions>
+          <exclusion>
+            <groupId>*</groupId>
+            <artifactId>*</artifactId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+    </dependencies>
+  </profile>
+</profiles>
+
     <build>
         <plugins>
             <plugin>
