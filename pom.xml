@@ -178,7 +178,9 @@
       <version>${project.parent.version}</version>
       <configuration>
         <mainClass>com.weather_found.weather_app.WeatherAppApplication</mainClass>
-        <layers>false</layers> <!-- disable layering to avoid config parse errors -->
+        <layers>
+          <enabled>false</enabled>
+        </layers> <!-- disable layering to avoid config parse errors -->
       </configuration>
       <executions>
         <execution>
@@ -201,4 +203,3 @@
 </build>
 
 </project>
-    
