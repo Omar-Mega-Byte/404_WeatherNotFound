@@ -4,15 +4,10 @@ import Home from './pages/Home';
 import Login from './pages/Login_new';
 import Register from './pages/Register_new';
 import Dashboard from './pages/Dashboard';
-import Events from './pages/Events';
-import Calendar from './pages/Calendar';
-import Analytics from './components/analytics/Analytics';
 import './App.css';
 import './styles/components/Common.css';
-import './styles/components/EventCard.css';
-import './styles/components/EventForm.css';
-import './styles/components/EventModal.css';
-import './styles/components/EventSearch.css';
+// Event-related styles and pages were removed to avoid missing module errors
+// If you add Events/Calendar/Analytics back, re-enable these imports
 
 // Simple Welcome component defined in App.js to avoid import issues
 const Welcome = () => {
@@ -95,9 +90,7 @@ function App() {
 
           {/* Protected routes */}
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/events" element={<Events />} />
-          <Route path="/calendar" element={<Calendar />} />
-          <Route path="/analytics/*" element={<Analytics />} />
+          {/* Removed Events/Calendar/Analytics routes because those modules are not present in the project */}
 
           {/* Catch all route */}
           <Route path="*" element={<Navigate to="/" replace />} />
