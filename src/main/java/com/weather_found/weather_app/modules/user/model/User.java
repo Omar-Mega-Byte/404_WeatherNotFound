@@ -2,7 +2,6 @@ package com.weather_found.weather_app.modules.user.model;
 
 import java.util.List;
 
-import com.weather_found.weather_app.modules.event.model.Event;
 import com.weather_found.weather_app.modules.shared.Base.BaseEntity;
 
 import jakarta.persistence.Column;
@@ -36,10 +35,6 @@ public class User extends BaseEntity {
         @Column(nullable = false)
         private boolean isActive;
 
-        @ManyToMany(fetch = jakarta.persistence.FetchType.LAZY)
-        @JoinTable(name = "user_events", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "event_id"))
-        private List<Event> events;
-
         // Default constructor
         public User() {
                 super();
@@ -55,7 +50,6 @@ public class User extends BaseEntity {
                 this.firstName = firstName;
                 this.lastName = lastName;
                 this.isActive = isActive;
-                this.events = new java.util.ArrayList<>();
         }
 
         // Getters and Setters
@@ -107,14 +101,6 @@ public class User extends BaseEntity {
                 this.isActive = isActive;
         }
 
-        public List<Event> getEvents() {
-                return events;
-        }
-
-        public void setEvents(List<Event> events) {
-                this.events = events;
-        }
-
         @Override
         public boolean equals(Object obj) {
                 if (this == obj)
@@ -138,7 +124,7 @@ public class User extends BaseEntity {
                         return false;
                 if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null)
                         return false;
-                return events != null ? events.equals(user.events) : user.events == null;
+                return true;
         }
 
         @Override
@@ -150,7 +136,6 @@ public class User extends BaseEntity {
                 result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
                 result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
                 result = 31 * result + (isActive ? 1 : 0);
-                result = 31 * result + (events != null ? events.hashCode() : 0);
                 return result;
         }
 
@@ -164,7 +149,6 @@ public class User extends BaseEntity {
                                 ", firstName='" + firstName + '\'' +
                                 ", lastName='" + lastName + '\'' +
                                 ", isActive=" + isActive +
-                                ", events=" + (events != null ? events.size() + " events" : "null") +
                                 ", createdAt=" + getCreatedAt() +
                                 ", updatedAt=" + getUpdatedAt() +
                                 '}';
