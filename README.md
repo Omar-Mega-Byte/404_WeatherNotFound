@@ -48,9 +48,6 @@ The application addresses the critical need for accurate, event-specific weather
 
 - 🔐 **User Authentication & Profile Management**
 - 📍 **Location-Based Weather Services**  
-- 📅 **Event Planning & Management**
-- 🤖 **AI-Powered Weather Predictions**
-- 📱 **Smart Notifications & Alerts**
 - 📊 **Analytics & Performance Metrics**
 - 🌍 **Multi-Source Weather Data Integration**
 - 📈 **Real-Time Weather Updates**
