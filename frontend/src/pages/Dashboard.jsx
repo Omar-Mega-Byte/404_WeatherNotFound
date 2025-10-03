@@ -208,8 +208,6 @@ const Dashboard = () => {
             </Link>
           </div>
           <div className="nav-menu">
-            <Link to="/events" className="nav-item">Events</Link>
-            <Link to="/calendar" className="nav-item">Calendar</Link>
             {isAuthenticated && currentUser && (
               <div className="nav-user-info">
                 <span className="user-welcome">Welcome, {currentUser.username || currentUser.name || 'User'}!</span>
