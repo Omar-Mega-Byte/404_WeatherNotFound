@@ -4,43 +4,8 @@ import weatherService from '../services/weatherService';
 import './Home_new.css';
 
 const Home = () => {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [animatedStats, setAnimatedStats] = useState({
-    users: 0,
-    forecasts: 0,
-    accuracy: 0,
-    countries: 0
-  });
   const [weatherData, setWeatherData] = useState(null);
   const [isLoadingWeather, setIsLoadingWeather] = useState(true);
-
-  // Testimonials carousel
-  const testimonials = [
-    {
-      name: 'Dr. Sarah Chen',
-      role: 'Chief Meteorologist',
-      company: 'National Weather Service',
-      quote: 'WeatherVision has revolutionized our forecasting capabilities. The AI accuracy is phenomenal.',
-      avatar: '👩‍🔬',
-      rating: 5
-    },
-    {
-      name: 'Mark Rodriguez',
-      role: 'Aviation Director',
-      company: 'SkyLine Airlines',
-      quote: 'Critical for flight safety. WeatherVision provides the most reliable weather data available.',
-      avatar: '👨‍✈️',
-      rating: 5
-    },
-    {
-      name: 'Emily Watson',
-      role: 'Agricultural Scientist',
-      company: 'GreenField Research',
-      quote: 'The precision agriculture features have transformed our crop management strategies.',
-      avatar: '👩‍🌾',
-      rating: 5
-    }
-  ];
 
   // Fetch real weather data on component mount
   useEffect(() => {
@@ -77,37 +42,6 @@ const Home = () => {
     const weatherInterval = setInterval(fetchWeatherData, 5 * 60 * 1000);
 
     return () => clearInterval(weatherInterval);
-  }, []);
-
-  // Auto-rotate testimonials
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
-
-  // Animate statistics on mount
-  useEffect(() => {
-    const animateValue = (start, end, duration, setter) => {
-      let startTimestamp = null;
-      const step = (timestamp) => {
-        if (!startTimestamp) startTimestamp = timestamp;
-        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-        setter(Math.floor(progress * (end - start) + start));
-        if (progress < 1) {
-          window.requestAnimationFrame(step);
-        }
-      };
-      window.requestAnimationFrame(step);
-    };
-
-    setTimeout(() => {
-      animateValue(0, 150, 2000, (val) => setAnimatedStats(prev => ({ ...prev, users: val })));
-      animateValue(0, 2500, 2500, (val) => setAnimatedStats(prev => ({ ...prev, forecasts: val })));
-      animateValue(0, 98, 2200, (val) => setAnimatedStats(prev => ({ ...prev, accuracy: val })));
-      animateValue(0, 195, 1800, (val) => setAnimatedStats(prev => ({ ...prev, countries: val })));
-    }, 500);
   }, []);
 
   // Helper function to get weather icon based on condition
@@ -156,7 +90,6 @@ const Home = () => {
           </div>
           <div className="nav-menu">
             <Link to="/features" className="nav-item">Features</Link>
-            <Link to="/pricing" className="nav-item">Pricing</Link>
             <Link to="/about" className="nav-item">About</Link>
             <Link to="/login" className="nav-item nav-signin">Sign In</Link>
             <Link to="/register" className="nav-cta">Get Started</Link>
@@ -177,36 +110,14 @@ const Home = () => {
               <span className="title-highlight"> Redefined</span>
             </h1>
             <p className="hero-subtitle">
-              Experience the future of weather forecasting with AI-powered predictions,
-              real-time satellite data, and precision that redefines accuracy.
+              Planning an outdoor event? Our app uses NASA's historical Earth observation data 
+              to tell you the likelihood of adverse weather conditions for any location and time you choose.
             </p>
             <div className="hero-actions">
-              <Link to="/register" className="btn btn-primary">
-                <span>Start Free Trial</span>
+              <Link to="/dashboard" className="btn btn-primary">
+                <span>Get Started</span>
                 <span className="btn-icon">→</span>
               </Link>
-              <Link to="/demo" className="btn btn-secondary">
-                <span className="btn-icon">▶</span>
-                <span>Watch Demo</span>
-              </Link>
-            </div>
-            <div className="hero-stats">
-              <div className="stat">
-                <div className="stat-number">{animatedStats.users}K+</div>
-                <div className="stat-label">Active Users</div>
-              </div>
-              <div className="stat">
-                <div className="stat-number">{animatedStats.forecasts}K+</div>
-                <div className="stat-label">Daily Predictions</div>
-              </div>
-              <div className="stat">
-                <div className="stat-number">{animatedStats.accuracy}%</div>
-                <div className="stat-label">Accuracy Rate</div>
-              </div>
-              <div className="stat">
-                <div className="stat-number">{animatedStats.countries}+</div>
-                <div className="stat-label">Countries</div>
-              </div>
             </div>
           </div>
 
@@ -320,96 +231,35 @@ const Home = () => {
       <section className="features">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Why Choose WeatherVision?</h2>
+            <h2 className="section-title">How It Works</h2>
             <p className="section-subtitle">
-              Advanced technology meets intuitive design for unparalleled weather intelligence
+              Leveraging decades of NASA data to give you personalized weather insights.
             </p>
           </div>
 
           <div className="features-grid">
             <div className="feature-card">
-              <span className="feature-icon">🛰️</span>
-              <h3 className="feature-title">NASA Satellite Data</h3>
+              <span className="feature-icon">�</span>
+              <h3 className="feature-title">Select Location & Time</h3>
               <p className="feature-description">
-                Comprehensive weather data for 195+ countries with hyper-local forecasting capabilities.
+                Choose any location on the globe and a specific day of the year.
               </p>
             </div>
 
             <div className="feature-card">
-              <span className="feature-icon">🧠</span>
-              <h3 className="feature-title">AI-Powered Predictions</h3>
+              <span className="feature-icon">�</span>
+              <h3 className="feature-title">Define Your Conditions</h3>
               <p className="feature-description">
-                Detailed insights, trends, and patterns with historical data going back 30+ years.
-              </p>
-            </div>
-
-            <div className="feature-card">
-              <span className="feature-icon">🔒</span>
-              <h3 className="feature-title">Enterprise Security</h3>
-              <p className="feature-description">
-                Bank-grade security with SOC 2 compliance and 99.9% uptime guarantee.
-              </p>
-            </div>
-
-            <div className="feature-card">
-              <span className="feature-icon">⚡</span>
-              <h3 className="feature-title">Real-Time Updates</h3>
-              <p className="feature-description">
-                Live weather tracking with minute-by-minute updates and instant alerts.
+                Specify what you consider "very hot," "windy," or "wet" to customize the analysis.
               </p>
             </div>
 
             <div className="feature-card">
               <span className="feature-icon">📊</span>
-              <h3 className="feature-title">Advanced Analytics</h3>
+              <h3 className="feature-title">Get Probabilities</h3>
               <p className="feature-description">
-                Comprehensive reporting and data visualization tools for informed decisions.
+                Receive a likelihood assessment of your defined weather conditions based on historical data.
               </p>
-            </div>
-
-            <div className="feature-card">
-              <span className="feature-icon">🌍</span>
-              <h3 className="feature-title">Global Coverage</h3>
-              <p className="feature-description">
-                Worldwide weather data with precision down to street-level accuracy.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="testimonials">
-        <div className="container">
-          <div className="testimonials-content">
-            <div className="section-header">
-              <h2 className="section-title">Trusted by Professionals</h2>
-              <p className="section-subtitle">See what industry experts say about WeatherVision</p>
-            </div>
-
-            <div className="testimonial-card">
-              <div className="testimonial-content">
-                <div className="testimonial-stars">
-                  {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                    <span key={i} className="star">⭐</span>
-                  ))}
-                </div>
-                <blockquote className="testimonial-quote">
-                  "{testimonials[currentTestimonial].quote}"
-                </blockquote>
-              </div>
-
-              <div className="testimonial-author">
-                <div className="author-avatar">
-                  {testimonials[currentTestimonial].avatar}
-                </div>
-                <div className="author-info">
-                  <div className="author-name">{testimonials[currentTestimonial].name}</div>
-                  <div className="author-role">
-                    {testimonials[currentTestimonial].role}, {testimonials[currentTestimonial].company}
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -420,34 +270,11 @@ const Home = () => {
         <div className="container">
           <div className="cta-content">
             <h2 className="cta-title">
-              Ready to Transform Your Weather Intelligence?
+              Ready to Plan Your Perfect Day?
             </h2>
             <p className="cta-subtitle">
-              Join thousands of professionals who trust WeatherVision for critical weather decisions.
+              Use historical data to make informed decisions about your future outdoor activities.
             </p>
-            <div className="cta-actions">
-              <Link to="/register" className="btn btn-primary">
-                <span>Start Free Trial</span>
-                <span className="btn-icon">→</span>
-              </Link>
-              <Link to="/contact" className="btn btn-outline">
-                <span>Contact Sales</span>
-              </Link>
-            </div>
-            <div className="cta-features">
-              <div className="cta-feature">
-                <span className="feature-check">✓</span>
-                <span>14-day free trial</span>
-              </div>
-              <div className="cta-feature">
-                <span className="feature-check">✓</span>
-                <span>No credit card required</span>
-              </div>
-              <div className="cta-feature">
-                <span className="feature-check">✓</span>
-                <span>Cancel anytime</span>
-              </div>
-            </div>
           </div>
         </div>
       </section>
