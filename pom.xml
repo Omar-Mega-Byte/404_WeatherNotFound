@@ -146,4 +146,28 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>3.5.5</version>
+                <configuration>
+                    <!-- Ensure the repackaged jar is executable -->
+                    <mainClass>com.weather_found.weather_app.WeatherAppApplication</mainClass>
+                    <layers>false</layers>
+                </configuration>
+            </plugin>
+            <!-- Optional: set maven-compiler to use configured java.version -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
