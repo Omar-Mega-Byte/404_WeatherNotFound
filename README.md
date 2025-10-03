@@ -361,10 +361,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 This project was developed for the NASA Space Apps Challenge 2025, focusing on utilizing Earth observation data for practical weather prediction applications.
 
-## 👥 Team
-
-- **Omar-Mega-Byte** - Project Lead & Full-Stack Developer
-
 ## 🙏 Acknowledgments
 
 - NASA Earth Observation data and APIs
