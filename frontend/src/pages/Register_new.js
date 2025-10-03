@@ -170,40 +170,21 @@ const Register = () => {
                 <span className="title-highlight"> WeatherVision</span>
               </h1>
               <p className="welcome-subtitle">
-                Create your account and unlock advanced weather intelligence tools trusted by meteorologists worldwide.
+                Create your account to access historical weather data and plan your activities with confidence.
               </p>
-
-              <div className="stats-grid">
-                <div className="stat-card">
-                  <div className="stat-number">150K+</div>
-                  <div className="stat-label">Active Users</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">98%</div>
-                  <div className="stat-label">Accuracy Rate</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">195+</div>
-                  <div className="stat-label">Countries</div>
-                </div>
-                <div className="stat-card">
-                  <div className="stat-number">24/7</div>
-                  <div className="stat-label">Support</div>
-                </div>
-              </div>
 
               <div className="benefits-list">
                 <div className="benefit-item">
                   <span className="benefit-icon">✅</span>
-                  <span>Free 14-day trial with full access</span>
+                  <span>Access to decades of NASA weather data</span>
                 </div>
                 <div className="benefit-item">
                   <span className="benefit-icon">✅</span>
-                  <span>No credit card required</span>
+                  <span>Save and manage your favorite locations</span>
                 </div>
                 <div className="benefit-item">
                   <span className="benefit-icon">✅</span>
-                  <span>Cancel anytime, no questions asked</span>
+                  <span>Get weather likelihood for any date</span>
                 </div>
               </div>
             </div>

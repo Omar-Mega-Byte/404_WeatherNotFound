@@ -146,20 +146,17 @@ const authService = {
     }
   },
 
-  async register(username, email, password, firstName, lastName) {
+  async register(userData) {
     try {
-      const userData = {
-        username,
-        email,
-        password,
-        firstName,
-        lastName,
+      // eslint-disable-next-line no-unused-vars
+      const { confirmPassword, ...registrationData } = {
+        ...userData,
         role: 'USER' // Default role for new registrations
       };
 
-      console.log('Sending registration request with data:', userData);
+      console.log('Sending registration request with data:', registrationData);
 
-      const response = await axios.post(`${API_URL}/register`, userData, {
+      const response = await axios.post(`${API_URL}/register`, registrationData, {
         headers: {
           'Content-Type': 'application/json',
         },
