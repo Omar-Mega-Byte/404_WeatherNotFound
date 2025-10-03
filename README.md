@@ -29,7 +29,7 @@
 
 ## 🌟 Overview
 
-"Will It Rain On My Parade?" is an intelligent weather prediction application designed to help users make informed decisions about outdoor events and activities. Built for the NASA Space Apps Challenge 2025, this application leverages advanced weather data and machine learning to provide personalized weather forecasts tailored for outdoor event planning.
+"Weather Vision" is an intelligent weather prediction application designed to help users make informed decisions about outdoor events and activities. Built for the NASA Space Apps Challenge 2025, this application leverages advanced weather data and machine learning to provide personalized weather forecasts tailored for outdoor event planning.
 
 The application addresses the critical need for accurate, event-specific weather predictions by combining multiple weather data sources with intelligent analysis to deliver actionable insights for event planners, outdoor enthusiasts, and anyone organizing weather-sensitive activities.
 
